@@ -1,0 +1,1 @@
+# qa-rails-ec-training-cuctus
