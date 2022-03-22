@@ -1,4 +1,4 @@
-# qa-rails-ec-training-cuctus
+# qa-rails-ec-training-cactus
 Rails共同開発講座(7期: サボテン組)のリポジトリです。
 
 ## Member
