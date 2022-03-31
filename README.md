@@ -2,8 +2,8 @@
 Rails共同開発講座(7期: サボテン組)のリポジトリです。
 
 ## Member
-- 氏名: 横入り太郎
-  - 好きなメソッド: sideway
+- 氏名: Ryo Yokoyama
+  - 好きなメソッド: length
 
 ## Docker操作
 ゼロからdocker環境を立ち上げる場合は、上から順にコマンドを実行すればOK
