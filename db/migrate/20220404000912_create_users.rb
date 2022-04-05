@@ -13,7 +13,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :phone_number, limit: 16
       t.references :user_classification, foreign_key: true
       t.string :company_name, limit: 128
-      t.boolean :delete_flg, limit: 1
+      t.boolean :delete_flg
 
       t.timestamps
     end
