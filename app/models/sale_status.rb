@@ -1,3 +1,3 @@
 class SaleStatus < ApplicationRecord
-    has_many :Products
+    has_many :products
 end
