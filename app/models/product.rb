@@ -4,4 +4,5 @@ class Product < ApplicationRecord
     belongs_to :product_status
     belongs_to :user
     has_many :purchases, dependent: :destroy
+    has_many :order_details
 end
