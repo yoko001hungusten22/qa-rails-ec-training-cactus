@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
+# TODO: User関連のSeedが必要
+
 Category.create(category_name: '寝具')
 Category.create(category_name: '時計')
 Category.create(category_name: '食品')
