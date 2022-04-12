@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
+  VALID_PASSWORD_REGEX = /^[0-9a-zA-Z]*$/
   VALID_ZIPCODE_REGEX = /\A[0-9]+\z/
   VALID_PHONE_NUMBER_REGEX = /\A[0-9]+\z/
 
