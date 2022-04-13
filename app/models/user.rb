@@ -16,6 +16,6 @@ class User < ApplicationRecord
   validates :address, presence: true, length: { maximum: 15 }
   validates :apartments, length: { maximum: 20 }
   validates :email, format: { with: VALID_EMAIL_REGEX }
-  validates :phone_number, presence: true, format: { with: VALID_PHONE_NUMBER_REGEX }, length: { minimum: 15 }
+  validates :phone_number, presence: true, format: { with: VALID_PHONE_NUMBER_REGEX }, length: { maximum: 15 }
 
 end
