@@ -6,32 +6,38 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-UserClassification.create!(user_classification_name: '会社員')
+UserClassification.create!(
+    user_classification_name: '会社員'
+)
 
 User.create!(
-    password: 'aaaaaa', 
-    last_name: '野原', 
-    first_name: 'ひろし', 
-    zipcode: '1234567', 
-    prefecture: '埼玉県', 
-    municipality: '春日部市', 
-    address: '3-27-3', 
-    email: 'hiroshi@example.com', 
-    phone_number: '05068933754', 
-    company_name: '双葉商事', 
-    user_classification_id: UserClassification.first.id
-)
-User.create!(
-    password: 'bbbbbb', 
-    last_name: '荻野', 
-    first_name: '千尋', 
-    zipcode: '2345678', 
-    prefecture: '香川県', 
-    municipality: '高松市', 
-    address: '4-23-1', 
-    email: 'chihiro@example.com', 
-    phone_number: '0353785235', 
-    user_classification_id: UserClassification.first.id
+    [
+        {
+            password: 'aaaaaa', 
+            last_name: '野原', 
+            first_name: 'ひろし', 
+            zipcode: '1234567', 
+            prefecture: '埼玉県', 
+            municipality: '春日部市', 
+            address: '3-27-3', 
+            email: 'hiroshi@example.com', 
+            phone_number: '05068933754', 
+            company_name: '双葉商事', 
+            user_classification_id: UserClassification.first.id
+        },
+        {
+            password: 'bbbbbb', 
+            last_name: '荻野', 
+            first_name: '千尋', 
+            zipcode: '2345678', 
+            prefecture: '香川県', 
+            municipality: '高松市', 
+            address: '4-23-1', 
+            email: 'chihiro@example.com', 
+            phone_number: '0353785235', 
+            user_classification_id: UserClassification.first.id
+        }
+    ]        
 )
 
 Category.create!(category_name: '寝具')
