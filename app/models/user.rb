@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   validates :last_name, presence: true, length: { maximum: 10 }
   validates :first_name, presence: true, length: { maximum: 10 }
+  has_secure_password
   validates :password, presence: true, confirmation: true , format: { with: VALID_PASSWORD_REGEX }, length: { in: 6..15 }
   validates :zipcode, presence: true, format: { with: VALID_ZIPCODE_REGEX }, length: { is: 7 }
   validates :prefecture, presence: true, length: { maximum: 5 }
