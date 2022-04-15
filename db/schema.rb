@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_09_112100) do
+ActiveRecord::Schema.define(version: 2022_04_14_235646) do
 
   create_table "categories", charset: "utf8mb4", force: :cascade do |t|
     t.string "category_name", limit: 32
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 2022_04_09_112100) do
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
-    t.string "password", limit: 64
+    t.string "password_digest", limit: 64
     t.string "last_name", limit: 16
     t.string "first_name", limit: 16
     t.string "zipcode", limit: 16
