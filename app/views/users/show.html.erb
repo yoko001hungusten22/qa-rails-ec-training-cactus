@@ -129,7 +129,8 @@ sans-serif;
                 氏名
               </td>
               <td>
-                ○○ ☓☓
+              <%= @user.last_name %>
+              <%= @user.first_name %>
               </td>
             </tr>
 
@@ -138,8 +139,10 @@ sans-serif;
                 住所
               </td>
               <td>
-                〒○〇〇-○○○○<br>
-                沖縄県那覇市○○ ○-○-◯
+                〒<%= @user.zipcode %><br>
+                <%= @user.prefecture %>
+                <%= @user.municipality %>
+                <%= @user.address %>
               </td>
             </tr>
             <tr>
@@ -147,14 +150,14 @@ sans-serif;
                 電話番号
               </td>
               <td>
-                ○○○-○○○○-○〇〇○
+              <%= @user.phone_number %>
               </td>
             <tr>
               <td class="text-center">
                 メールアドレス
               </td>
               <td>
-                User@example.com
+              <%= @user.email %>
               </td>
             </tr>
           </tbody>
