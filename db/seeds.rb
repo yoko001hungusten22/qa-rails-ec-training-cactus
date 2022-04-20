@@ -89,3 +89,84 @@ Product.create!(
   regist_date: '2020/02/02', 
   user_id: User.second.id
 )
+
+ShipmentStatus.create!(shipment_status_name: '準備中')
+ShipmentStatus.create!(shipment_status_name: '発送済')
+
+Order.create!(
+  user_id: User.first.id,
+  order_date: DateTime.new(2022, 4, 10, 0, 00, 0),
+  order_number: 'AFK136'
+)
+Order.create!(
+  user_id: User.second.id,
+  order_date: DateTime.new(2022, 4, 9, 0, 00, 0),
+  order_number: 'BWL480'
+)
+
+OrderDetail.create!(
+  [
+    {
+      product_id: Product.first.id, 
+      order_id: Order.first.id, 
+      shipment_status_id: ShipmentStatus.first.id, 
+      order_detail_number: 'A151', 
+      order_quantity: 1, 
+      shipment_date: '2022/04/11'
+    },
+    {
+      product_id: Product.second.id, 
+      order_id: Order.first.id, 
+      shipment_status_id: ShipmentStatus.second.id, 
+      order_detail_number: 'A1244', 
+      order_quantity: 4
+    },
+    {
+      product_id: Product.third.id, 
+      order_id: Order.first.id, 
+      shipment_status_id: ShipmentStatus.first.id, 
+      order_detail_number: 'A32855', 
+      order_quantity: 10, 
+      shipment_date: '2022/04/11'
+    },
+    {
+      product_id: Product.fourth.id, 
+      order_id: Order.first.id, 
+      shipment_status_id: ShipmentStatus.first.id, 
+      order_detail_number: 'A679721', 
+      order_quantity: 1, 
+      shipment_date: '2022/04/11'
+    },
+    {
+      product_id: Product.first.id, 
+      order_id: Order.second.id, 
+      shipment_status_id: ShipmentStatus.first.id, 
+      order_detail_number: 'A41234', 
+      order_quantity: 3, 
+      shipment_date: '2022/04/10'
+    },
+    {
+      product_id: Product.second.id, 
+      order_id: Order.second.id, 
+      shipment_status_id: ShipmentStatus.second.id, 
+      order_detail_number: 'ADE78', 
+      order_quantity: 7
+    },
+    {
+      product_id: Product.third.id, 
+      order_id: Order.second.id, 
+      shipment_status_id: ShipmentStatus.first.id, 
+      order_detail_number: 'AB390', 
+      order_quantity: 9, 
+      shipment_date: '2022/04/10'
+    },
+    {
+      product_id: Product.fourth.id, 
+      order_id: Order.second.id, 
+      shipment_status_id: ShipmentStatus.first.id, 
+      order_detail_number: 'AC273', 
+      order_quantity: 3, 
+      shipment_date: '2022/04/10'
+    }
+  ]        
+)
