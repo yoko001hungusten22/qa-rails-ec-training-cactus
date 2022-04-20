@@ -95,12 +95,12 @@ ShipmentStatus.create!(shipment_status_name: '発送済')
 
 Order.create!(
   user_id: User.first.id,
-  order_date: '2022/04/10',
+  order_date: DateTime.new(2022, 4, 10, 0, 00, 0),
   order_number: 'AFK136'
 )
 Order.create!(
   user_id: User.second.id,
-  order_date: '2022/04/09',
+  order_date: DateTime.new(2022, 4, 9, 0, 00, 0),
   order_number: 'BWL480'
 )
 
