@@ -10,7 +10,7 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.timestamp :regist_date
       t.references :user, foreign_key: true
       t.boolean :delete_flg
-      
+
       t.timestamps
     end
   end
