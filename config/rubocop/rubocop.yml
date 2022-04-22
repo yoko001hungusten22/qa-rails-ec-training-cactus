@@ -3,6 +3,15 @@ AllCops:
     - "node_modules/**/*"
     - "vendor/**/*"
     - "db/schema.rb"
+    - "db/migrate/**/*"
+    - "app/channels/**/*"
+    - "config/**/*"
+    - "config.ru"
+    - "bin/**/*"
+    - "public/**/*"
+    - "tmp/**/*"
+    - "log/**/*"
+    - "Gemfile"
 
 Layout/ClassStructure:
   Enabled: true
