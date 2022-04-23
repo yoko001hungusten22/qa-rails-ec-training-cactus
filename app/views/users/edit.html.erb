@@ -117,16 +117,19 @@ sans-serif;
           <%= form_with(model: @user, local: true) do |f| %>
             <tr height="40">
               <td align="center">
-                氏名<span style="float: right">姓</span>
+                氏名<span style="float: right">
+                <%= f.label :last_name, "姓" %>
               </td>
               <td>
-                <%= f.text_field :last_name %></span>名<%= f.text_field :first_name %>
+                <%= f.text_field :last_name %>
+                <%= f.label :first_name, "名" %>
+                <%= f.text_field :first_name %>
               </td>
             </tr>
 
             <tr height="40">
               <td align="center">
-                住所<span style="float: right">〒</span>
+              <%= f.label :zipcode, "住所" %><span style="float: right">〒</span>
               </td>
               <td colspan="2">
                 <%= f.text_field :zipcode %>
@@ -135,7 +138,7 @@ sans-serif;
 
             <tr height="40">
               <td align="right">
-                都道府県
+              <%= f.label :prefecture, "都道府県" %>
               </td>
               <td colspan="2">
                 <%= f.text_field :prefecture %>
@@ -144,7 +147,7 @@ sans-serif;
 
             <tr height="40">
               <td align="right">
-                市町村区
+              <%= f.label :municipality, "市区町村" %>
               </td>
               <td colspan="2">
                 <%= f.text_field :municipality %>
@@ -153,7 +156,7 @@ sans-serif;
 
             <tr height="40">
               <td align="right">
-                番地
+              <%= f.label :address, "番地" %>
               </td>
               <td colspan="2">
                 <%= f.text_field :address %>
@@ -162,7 +165,7 @@ sans-serif;
 
             <tr height="40">
               <td align="right">
-                マンション<br>部屋番号</br>
+              <%= f.label :apartments, "マンション" %><br><%= f.label :apartments, "部屋番号" %></br>
               </td>
               <td colspan="2">
                 <%= f.text_field :apartments %>
@@ -171,7 +174,7 @@ sans-serif;
 
             <tr height="40">
               <td align="center">
-                メールアドレス
+              <%= f.label :address, "メールアドレス" %>
               </td>
               <td colspan="2">
                 <%= f.email_field :email %> 
@@ -180,10 +183,10 @@ sans-serif;
 
             <tr height="40">
               <td align="center">
-                電話番号
+              <%= f.label :phone_number, "電話番号" %>
               </td>
               <td colspan="2">
-                <%= f.email_field :phone_number %> 
+                <%= f.text_field :phone_number %> 
               </td>
             </tr>
           <% end %>
