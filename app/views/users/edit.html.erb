@@ -129,7 +129,8 @@ sans-serif;
 
             <tr height="40">
               <td align="center">
-                <%= f.label :zipcode, "住所" %><span style="float: right">〒</span>
+                <span style="float: right">
+                <%= f.label :zipcode, "〒" %>
               </td>
               <td colspan="2">
                 <%= f.text_field :zipcode %>
