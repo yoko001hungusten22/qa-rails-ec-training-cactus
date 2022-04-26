@@ -124,11 +124,15 @@ $ docker-compose stop
 ```
 
 - 確認のために以下のコマンドを実行する
-`$ docker-compose exec web bundle exec rails webpacker:compile`
+```
+$ docker-compose exec web bundle exec rails webpacker:compile
+```
 
 - `Cannot find module '@rails/webpacker` というエラー文が出た場合は、以下を実行する
 (文頭にdocker的なコマンドは付けない)
-`$ yarn add @rails/webpacker` 
+```
+$ yarn add @rails/webpacker
+``` 
 
 ## `docker-compose up`を実行すると、 `Could not find XXX in any of the sources`というエラーが出て立ち上がらない
 
