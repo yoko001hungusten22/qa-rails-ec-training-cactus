@@ -116,3 +116,36 @@ $ docker-compose run --rm web yarn install
 
 [この問題についての詳細はこちら]
 https://qiita.com/yama_ryoji/items/1de1f2e9e206382c4aa5
+
+## `Webpacker::Manifest::MissingEntryError`と出た時の対処法
+- まずはdocker-composeを停止
+```
+$ docker-compose stop
+```
+
+- 確認のために以下のコマンドを実行する
+```
+$ docker-compose exec web bundle exec rails webpacker:compile
+```
+
+- `Cannot find module '@rails/webpacker` というエラー文が出た場合は、以下を実行する
+(文頭にdocker的なコマンドは付けない)
+```
+$ yarn add @rails/webpacker
+``` 
+
+## `docker-compose up`を実行すると、 `Could not find XXX in any of the sources`というエラーが出て立ち上がらない
+
+以下のようなログが出るときの対処法
+```
+web_1  | Could not find ast-2.4.2 in any of the sources
+web_1  | Run `bundle install` to install missing gems.
+qa-rails-ec-training-cactus_web_1 exited with code 7
+```
+
+以下を順番に行う。
+実際のコマンドはREADME内に書いてあるので、探してみてください。
+- コンテナを停止
+- Dockerのイメージ/コンテナ/ネットワーク/ボリューム一括削除
+- docker-compose構築
+- docker-compose起動
