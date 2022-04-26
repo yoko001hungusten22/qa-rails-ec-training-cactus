@@ -116,3 +116,13 @@ $ docker-compose run --rm web yarn install
 
 [この問題についての詳細はこちら]
 https://qiita.com/yama_ryoji/items/1de1f2e9e206382c4aa5
+
+## `Webpacker::Manifest::MissingEntryError`と出た時の対処法
+
+まずは以下のコマンドを実行する
+`$ docker-compose exec web bundle exec rails webpacker:compile`
+
+`Cannot find module '@rails/webpacker` というエラー文が出た場合は、以下を実行する
+(文頭にdocker的なコマンドは付けない)
+`$ yarn add @rails/webpacker` 
+
