@@ -112,9 +112,9 @@ sans-serif;
     <main>
 
       <h2 class="text-center mt-5">ユーザ情報修正</h2>
-      <table width="50%" style="margin-left:350px">
-        <div>
-          <%= form_with(model: @user, local: true) do |f| %>
+      <div>
+        <%= form_with(model: @user, local: true) do |f| %>
+          <table width="50%" style="margin-left:350px">       
             <tr height="40">
               <td align="center">
                 氏名<span style="float: right">
@@ -190,23 +190,21 @@ sans-serif;
                 <%= f.text_field :phone_number %> 
               </td>
             </tr>
-          <% end %>
-        </div>
-      </table>
+          </table>
+          <div class="row mt-5">
+            <div class="col-5">
+              <div class="d-flex justify-content-end">  
+                <%= f.submit "修正", class: "btn btn-primary" %>
+              </div>
+            </div>
 
-      <div class="row mt-5">
-        <div class="col-5">
-          <div class="d-flex justify-content-end">
-            <%= form_with(model: @user, local: true) do |f| %>
-              <%= f.submit "修正", class: "btn btn-primary" %>
-            <% end %>
-          </div>
-        </div>
-
-        <div class="col-5 offset-2">
-          <button class="btn btn-danger" type="submit">退会</button>
-        </div>
+            <div class="col-5 offset-2">
+              <%= f.submit "退会", class: "btn btn-danger" %>
+            </div>
+          </div>  
+        <% end %>
       </div>
+           
     </main>
     <footer>
       <h1>探求学園Rails専攻</h1>
