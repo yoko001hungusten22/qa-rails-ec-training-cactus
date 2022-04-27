@@ -1,0 +1,62 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	display: flex;
+	/*フッターをウィンドウの最下部に常に表示させるために */
+	flex-flow: column;
+	/*flexboxのみだと横並びに。これで縦並び */
+	position: relative;
+	/*←相対位置*/
+	padding-bottom: 70px;
+	/*←footerの高さ*/
+	box-sizing: border-box;
+	/*←全て含めてmin-height:100vhにbody全体の表示領域を確保・指定*/
+	min-height: 100vh;
+	font-family: "Hiragino Kaku Gothic Pro",
+		"ヒラギノ角ゴ Pro W3",
+		メイリオ,
+		Meiryo,
+		"ＭＳ Ｐゴシック",
+		"HelveticaNeue", Helvetica,sans-serif;
+}
+header {
+	background-color: #ffe040;
+	z-index: 10;
+	/* 要素の重なり順序指定 */
+}
+header h1 {
+	font-weight: bold;
+}
+header a {
+	font-weight: bold;
+	padding-left: 8px;
+}
+header p {
+	text-align: right;
+}
+header li {
+	list-style: none;
+}
+main {
+	background: #ffffff;
+	flex: 1;
+	/* header footerの高さを除いた、残りの部分がmainで埋まる */
+}
+footer {
+	width: 100%;
+	background-color: #ffe040;
+	position: absolute;
+	bottom: 0;
+}
+footer h1 {
+	font-size: 15px;
+	font-weight: bold;
+	margin: 8px 5px;
+}
+footer p {
+	text-align: right;
+	font-weight: lighter;
+	margin: 0 auto;
+}

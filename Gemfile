@@ -27,6 +27,7 @@ gem "bcrypt", "~>3.1.17"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
+gem 'bootstrap', "~> 5.0.0-beta3"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
