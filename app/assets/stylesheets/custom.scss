@@ -48,7 +48,9 @@ footer {
 	width: 100%;
 	background-color: #ffe040;
 	position: absolute;
+	/*←絶対位置*/
 	bottom: 0;
+	/*下に固定*/
 }
 footer h1 {
 	font-size: 15px;
@@ -60,7 +62,6 @@ footer p {
 	font-weight: lighter;
 	margin: 0 auto;
 }
-
 .table td {
 	border: none;
 }
