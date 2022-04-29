@@ -1,0 +1,123 @@
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <div class="navbar-nav mr-auto">
+            <h1><a class="nav-link navbar-brand" href="#">探求学園Rails専攻</a></h1>
+          </div>
+          <div>
+            <ul>
+              <p>〇〇 ××さん</p>
+            </ul>
+            <ul class="navbar-nav">
+              <a class="nav-link text-dark" href="#">商品検索</a>
+              <a class="nav-link text-dark" href="#">カート</a>
+              <a class="nav-link text-dark" href="#">注文履歴</a>
+              <a class="nav-link text-dark" href="#">ユーザ情報</a>
+              <a class="nav-link text-dark" href="#">ログアウト</a>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+
+      <h2 class="text-center mt-5">ユーザ情報修正</h2>
+      <div>
+        <%= form_with(model: @user, local: true) do |f| %>
+          <table width="50%" style="margin-left:350px">       
+            <tr height="40">
+              <td align="center">
+                氏名<span style="float: right">
+                  <%= f.label :last_name, "姓" %>
+              </td>
+              <td>
+                <%= f.text_field :last_name %>
+                <%= f.label :first_name, "名" %>
+                <%= f.text_field :first_name %>
+              </td>
+            </tr>
+
+            <tr height="40">
+              <td align="center">
+                <span style="float: right">
+                <%= f.label :zipcode, "〒" %>
+              </td>
+              <td colspan="2">
+                <%= f.text_field :zipcode %>
+              </td>
+            </tr>
+
+            <tr height="40">
+              <td align="right">
+                <%= f.label :prefecture, "都道府県" %>
+              </td>
+              <td colspan="2">
+                <%= f.text_field :prefecture %>
+              </td>
+            </tr>
+
+            <tr height="40">
+              <td align="right">
+                <%= f.label :municipality, "市区町村" %>
+              </td>
+              <td colspan="2">
+                <%= f.text_field :municipality %>
+              </td>
+            </tr>
+
+            <tr height="40">
+              <td align="right">
+                <%= f.label :address, "番地" %>
+              </td>
+              <td colspan="2">
+                <%= f.text_field :address %>
+              </td>
+            </tr>
+
+            <tr height="40">
+              <td align="right">
+                <%= f.label :apartments, "マンション" %><br><%= f.label :apartments, "部屋番号" %></br>
+              </td>
+              <td colspan="2">
+                <%= f.text_field :apartments %>
+              </td>
+            </tr>
+
+            <tr height="40">
+              <td align="center">
+                <%= f.label :address, "メールアドレス" %>
+              </td>
+              <td colspan="2">
+                <%= f.email_field :email %> 
+              </td>
+            </tr>
+
+            <tr height="40">
+              <td align="center">
+                <%= f.label :phone_number, "電話番号" %>
+              </td>
+              <td colspan="2">
+                <%= f.text_field :phone_number %> 
+              </td>
+            </tr>
+          </table>
+          
+          <div class="row mt-5">
+            <div class="col-5">
+              <div class="d-flex justify-content-end">  
+                <%= f.submit "修正", class: "btn btn-primary" %>
+              </div>
+            </div>
+        
+            <div class="col-5 offset-2">
+              <button class="btn btn-danger" type="submit">退会</button>
+            </div>
+          </div>
+        <% end %>
+      </div>  
+           
+    </main>
+    <footer>
+      <h1>探求学園Rails専攻</h1>
+      <p>© 2020 QuestAcademia, All rights reserved</p>
+    </footer>
