@@ -1,0 +1,51 @@
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <div class="navbar-nav mr-auto">
+          <h1><a class="nav-link navbar-brand" href="#">探求学園Rails専攻</a></h1>
+        </div>
+        <div>
+          <ul>
+            <li>
+              <a class="text-dark" href="#"> ログイン </a>
+              <a class="text-dark" href="#"> 新規登録 </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h4 class="d-flex justify-content-center mt-5 mb-3">ログイン画面</h4>
+    <%= form_with url: login_path, local: true do |f| %>
+      <div class="d-flex justify-content-center">
+        <div class="">
+          <%= f.label :email, "メールアドレス", class: "mb-0" %>
+          <p><%= f.email_field :email, id: "email" %></p>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <div>
+          <%= f.label :password, "パスワード", class: "mb-0" %>
+          <p><%= f.password_field :password, id: "password" %></p>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <div>
+          <%= f.submit "ログイン", class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="d-flex justify-content-center">
+      <a href="">まだ登録がお済みでない方はこちら</a>
+    </div>
+  </main>
+
+  <footer>
+    <h1>探求学園Rails専攻</h1>
+    <p>© 2020 QuestAcademia, All rights reserved</p>
+  </footer>
