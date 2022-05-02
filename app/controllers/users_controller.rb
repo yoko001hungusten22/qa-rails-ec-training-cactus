@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  add_flash_types :success, :info, :warning, :danger
+  
   def show
     @user = User.find_by(id: params[:id])
   end
@@ -19,6 +21,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:password, :last_name, :first_name, :zipcode, :prefecture, :municipality, :address, :apartments, :email, :phone_number, :company_name).merge(password: "password")
+    params.require(:user).permit(:last_name, :first_name, :zipcode, :prefecture, :municipality, :address, :apartments, :email, :phone_number, :company_name, :password, :password_confirmation)
   end
 end
