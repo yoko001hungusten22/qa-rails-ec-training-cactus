@@ -75,115 +75,22 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td scope="row">
-                  商品名1
-                </td>
-                <td class="text-center">
-                  食料品
-                </td>
-                <td class="text-center">
-                  1000円
-                </td>
-                <td class="text-center">
-                  <a href="#" class="btn btn-primary btn-sm">商品詳細</a>
-                </td>
-              </tr>
-              <tr>
-                <td scope="row">
-                  商品名2
-                </td>
-                <td class="text-center">
-                  食料品
-                </td>
-                <td class="text-center">
-                  2000円
-                </td>
-                <td class="text-center">
-                  <a href="#" class="btn btn-primary btn-sm">商品詳細</a>
-                </td>
-              </tr>
-              <tr>
-                <td scope="row">
-                  商品名3
-                </td>
-                <td class="text-center">
-                  食料品
-                </td>
-                <td class="text-center">
-                  4000円
-                </td>
-                <td class="text-center">
-                  <a href="#" class="btn btn-primary btn-sm">商品詳細</a>
-                </td>
-              </tr>
-              <tr>
-                <td scope="row">
-                  商品名4
-                </td>
-                <td class="text-center">
-                  食料品
-                </td>
-                <td class="text-center">
-                  500円
-                </td>
-                <td class="text-center">
-                  <a href="#" class="btn btn-primary btn-sm">商品詳細</a>
-                </td>
-              </tr>
-              <tr>
-                <td scope="row">
-                  商品名5
-                </td>
-                <td class="text-center">
-                  食料品
-                </td>
-                <td class="text-center">
-                  1000円
-                </td>
-                <td class="text-center">
-                  <a href="#" class="btn btn-primary btn-sm">商品詳細</a>
-                </td>
-              </tr>
-              <tr>
-                <td scope="row"></td>
-                <td class="text-center">
-                  ・
-                </td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-              </tr>
-              <tr>
-                <td scope="row">
-                </td>
-                <td class="text-center">
-                  ・
-                </td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-              </tr>
-              <tr>
-                <td scope="row"></td>
-                <td class="text-center">
-                  ・
-                </td>
-                <td class="text-center"></td>
-                <td class="text-center"></td>
-              </tr>
-              <tr>
-                <td scope="row">
-                  商品名15
-                </td>
-                <td class="text-center">
-                  食料品
-                </td>
-                <td class="text-center">
-                  1000円
-                </td>
-                <td class="text-center">
-                  <a href="#" class="btn btn-primary btn-sm">商品詳細</a>
-                </td>
-              </tr>
+              <% @products.each do |product| %>
+                <tr>
+                  <td scope="row">
+                    <%= product.product_name %>
+                  </td>
+                  <td class="text-center">
+                    <%= product.category.category_name %>
+                  </td>
+                  <td class="text-center">
+                    <%= product.price %>円
+                  </td>
+                  <td class="text-center">
+                    <a href="#" class="btn btn-primary btn-sm">商品詳細</a>
+                  </td>
+                </tr>
+              <% end %>
             </tbody>
           </table>       
           <div class="container">
