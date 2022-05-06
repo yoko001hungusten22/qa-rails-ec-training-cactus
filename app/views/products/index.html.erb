@@ -87,7 +87,9 @@
                     <%= product.price %>円
                   </td>
                   <td class="text-center">
-                    <a href="#" class="btn btn-primary btn-sm">商品詳細</a>
+                    <%= link_to '商品詳細', product_path(product), class: "btn btn-primary btn-lg" %>
+                      
+                    
                   </td>
                 </tr>
               <% end %>
