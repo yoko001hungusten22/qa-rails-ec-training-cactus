@@ -73,18 +73,7 @@
                   </tr>
                 <% end %>
               </tbody>
-            </table>       
-            <div class="container">
-              <nav aria-label="...">
-                <ul class="pagination justify-content-center">
-                  <li class="page-item active">
-                    <a class="page-link" href="#">1<span class="sr-only">(現在)</span></a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                </ul>
-              </nav>
-            </div>
+            </table>
           <% else %>
             <p>全0件</p>
             <table class="table table-hover" border="1" style="border-collapse: collapse">
@@ -99,7 +88,13 @@
             </table>
             <h2 class="text-center">検索結果がありませんでした</h2>
           <% end %>
-          <%= paginate @products %>
+          <div class="container">
+            <nav aria-label="...">
+              <ul class="pagination justify-content-center">
+                <%= paginate @products %>
+              </ul>
+            </nav>
+          </div>
         </div>
         </main>
 
