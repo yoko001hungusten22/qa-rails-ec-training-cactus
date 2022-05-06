@@ -36,23 +36,17 @@
   </div>
 
   <div class="container">
-    <% if @products %>
-      <p>全<%= @products.count %>件</p>
-      <table class="table table-hover" border="1" style="border-collapse: collapse">
-        <thead>
-          <tr class=" table-header">
-            <th class="text-left" width="55%">
-              商品名
-            </th>
-            <th class="text-center" width="15%">
-              商品カテゴリ
-            </th>
-            <th class="text-center" width="15%">
-              価格
-            </th>
-            <th class="text-center" width="15%"></th>
-          </tr>
-        </thead>
+    <p>全<%= @products.count %>件</p>
+    <table class="table table-hover" border="1" style="border-collapse: collapse">
+      <thead>
+        <tr>
+          <th class="text-left" width="55%">商品名</th>
+          <th class="text-center" width="15%">商品カテゴリ</th>
+          <th class="text-center" width="15%">価格</th>
+          <th class="text-center" width="15%"></th>
+        </tr>
+      </thead>
+      <% if @products %>  
         <tbody>
           <% @products.each do |product| %>
             <tr>
@@ -71,21 +65,10 @@
             </tr>
           <% end %>
         </tbody>
-      </table>
-    <% else %>
-      <p>全0件</p>
-      <table class="table table-hover" border="1" style="border-collapse: collapse">
-        <thead>
-          <tr>
-            <th class="text-left" width="55%">商品名</th>
-            <th class="text-center" width="15%">商品カテゴリ</th>
-            <th class="text-center" width="15%">価格</th>
-            <th class="text-center" width="15%"></th>
-          </tr>
-        </thead>
-      </table>
-      <h2 class="text-center">検索結果がありませんでした</h2>
-    <% end %>
+      <% else %>
+        <h2 class="text-center">検索結果がありませんでした</h2>
+      <% end %>
+    </table>
     <div class="container">
       <ul class="pagination justify-content-center">
         <%= paginate @products %>
