@@ -89,11 +89,9 @@
       <h2 class="text-center">検索結果がありませんでした</h2>
     <% end %>
     <div class="container">
-      <nav aria-label="...">
-        <ul class="pagination justify-content-center">
-          <%= paginate @products %>
-        </ul>
-      </nav>
+      <ul class="pagination justify-content-center">
+        <%= paginate @products %>
+      </ul>
     </div>
   </div>
 </main>
