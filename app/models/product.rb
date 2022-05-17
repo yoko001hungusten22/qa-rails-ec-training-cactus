@@ -8,13 +8,10 @@ class Product < ApplicationRecord
 
   enum category: { 寝具: 1, 時計: 2, 食品: 3, 文具: 4 }
 
-  #商品名による絞り込み
-  scope :get_by_name, ->(product_name) {
-  where('product_name LIKE ?', "%#{product_name}%")
-  }
-  
-  #カテゴリーによる絞り込み
-  scope :get_by_category, ->(category) {
-  where(category: category)
-  }
+  def self.search(product_name, category_id)
+    products = Product.all
+    products = products.where('product_name LIKE ?', "%#{product_name}%") if product_name
+    products = products.where(category_id: category_id) if category_id
+    products
+  end
 end

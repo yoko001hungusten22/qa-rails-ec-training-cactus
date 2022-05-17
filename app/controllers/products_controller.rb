@@ -4,13 +4,6 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all.page(params[:page]).per(10)
-  
-    if params[:product_name].present?
-      @products = @products.get_by_name params[:product_name]
-    end
-    if params[:category].present?
-      @products = @products.get_by_category params[:category]
-    end
+    @products = Product.search(params[:product_name], params[:category_id]).page(params[:page]).per(10)
   end
 end
