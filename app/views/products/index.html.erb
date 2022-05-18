@@ -20,7 +20,7 @@
       <div class="mx-auto row">
         <%= f.label(:category_name, '商品カテゴリ', class: "col-sm-2 col-form-label col-form-label-lg") %>
         <div class="col-sm-4">
-          <%= f.select :category_id, options_for_select(Product.categories, selected: params[:category_id]), include_blank: '未選択', class: "form-control" %>
+          <%= f.select :category_id, options_for_select(Product.categories, selected: params[:category_id]), {include_blank: '未選択'}, {class: "form-control"} %>
         </div>
       </div>
     </div>
