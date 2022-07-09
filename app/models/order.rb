@@ -7,6 +7,6 @@ class Order < ApplicationRecord
   end
 
   def all_products_total_price
-    order_details.sum {|order_detail| order_detail.product.price * order_detail.order_quantity}
+    order_details.sum {_1.one_product_total_price}
   end
 end
