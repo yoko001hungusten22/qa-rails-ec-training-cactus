@@ -1,0 +1,73 @@
+<% provide(:title, "注文履歴ページ") %>
+<% if @orders.present? %>
+  <main>
+    <div class="container my-4 mt-5">
+      <a href="#" class="btn btn-secondary py-0">直近3ヶ月の注文を表示</a>
+    </div>
+
+    <div class="container">
+      <hr style="width:90%; opacity:0.9;">
+      <table class="table">
+        <thead class="table h4">
+          <tr>
+            <th class="text-start" width="5%">
+              No
+            </th>
+            <th class="text-start" width="20%">
+              注文番号
+            </th>
+            <th class="text-start" width="40%">
+              お届け先
+            </th>
+            <th class="text-start" width="25%">
+              備考
+            </th>
+            <th class="text-start border-0" width="20%"></th>
+          </tr>
+        </thead>
+        <tbody class="h6 font-weight-normal">
+          <% @orders.each.with_index(1) do |order, i| %>
+            <tr>
+              <th class="font-weight-normal" scope="row">
+                <%= i %>
+              </th>
+              <td class="text-left">
+                <%= order.order_number %>
+              </td>
+              <td class="text-left">
+                〒○○○-○○○○<br />富山県南砺市○○ ○-○-○<br />○○ ✕✕ 様
+              </td>
+              <td class="text-left">
+                注文日時：2020/10/16<br />注文状態：準備中
+              </td>
+              <td class="border-0 align-middle">
+                <a href="#" class="btn btn-primary btn-sm">詳細</a>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container">
+      <nav aria-label="...">
+        <ul class="pagination justify-content-center">
+          <%= paginate @orders %>
+        </ul>
+      </nav>
+    </div>
+  </main>
+
+<% else %>
+  <main>
+    <div class="blockquote mt-5 text-center">
+      <h1 style="font-weight: bolder">該当の注文は見つかりませんでした...</h1>
+    </div>
+    <div class="container-sm mt-5 text-center">
+      <p class="h2 mt-5">注文履歴画面に戻り、やり直してください</p>
+    </div>
+    <div class="container mt-5 text-center">
+      <a href="#" class="btn btn-primary mt-5">注文履歴へ</a>
+    </div>
+  </main>
+<% end %>
