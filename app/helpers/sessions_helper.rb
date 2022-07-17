@@ -24,6 +24,7 @@ module SessionsHelper
     @user = User.find_by(id: params[:id])
     if current_user != @user
       flash[:danger] = '他人の情報にアクセスすることはできません。'
+      #TODO: TOPページ完成後に遷移先を変更する
       redirect_to login_url
     end
   end
