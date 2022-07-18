@@ -20,15 +20,6 @@ module SessionsHelper
     end
   end
 
-  def correct_user
-    @user = User.find_by(id: params[:id])
-    if current_user != @user
-      flash[:danger] = '他人の情報にアクセスすることはできません。'
-      #TODO: TOPページ完成後に遷移先を変更する
-      redirect_to login_url
-    end
-  end
-
   def log_out
     session.delete(:user_id)
     @current_user = nil
