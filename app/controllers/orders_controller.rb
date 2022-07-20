@@ -7,6 +7,10 @@ class OrdersController < ApplicationController
     @order = current_user.orders.find_by(id: params[:id])
   end
 
+  def index
+    @orders = current_user.orders.order('id').page(params[:page]).per(10)
+  end
+
   def correct_user
     order = Order.find_by(id: params[:id])
     if current_user != order.user
@@ -14,9 +18,5 @@ class OrdersController < ApplicationController
       flash[:danger] = '他人の情報にアクセスすることはできません。'
       redirect_to login_url
     end
-  end
-
-  def index
-    @orders = current_user.orders.order('id').page(params[:page]).per(10)
   end
 end
