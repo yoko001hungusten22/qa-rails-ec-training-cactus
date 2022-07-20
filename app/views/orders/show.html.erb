@@ -15,7 +15,9 @@
           <%= @order.find_preparation_shipment_status ? "注文状態：準備中" : "注文状態：発送済" %>
         </div>
         <div class="text-end">
+        <% if @order.find_preparation_shipment_status %>
           <%= link_to "注文をキャンセルする", @order, method: :delete, class: "btn btn-danger" %>
+        <% end %>
         </div>
         <table class="table table-borderless mt-3">
           <thead>
