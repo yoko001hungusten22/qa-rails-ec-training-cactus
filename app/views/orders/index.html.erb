@@ -35,13 +35,15 @@
                 <%= order.order_number %>
               </td>
               <td class="text-left">
-                〒○○○-○○○○<br />富山県南砺市○○ ○-○-○<br />○○ ✕✕ 様
+                〒<%= current_user.zipcode %><br /><%= current_user.prefecture %><%= current_user.municipality %><%= current_user.address %><br />
+                <%= current_user.last_name %> <%= current_user.first_name %> 様
               </td>
               <td class="text-left">
-                注文日時：2020/10/16<br />注文状態：準備中
+                注文日時：<%= order.order_date.strftime('%Y/%m/%d') %><br />
+                <%= order.find_preparation_shipment_status ? "注文状態：準備中" : "注文状態：発送済" %>
               </td>
               <td class="border-0 align-middle">
-                <a href="#" class="btn btn-primary btn-sm">詳細</a>
+                <%= link_to '詳細', order_path(order), class: "btn btn-primary btn-sm" %>
               </td>
             </tr>
           <% end %>
