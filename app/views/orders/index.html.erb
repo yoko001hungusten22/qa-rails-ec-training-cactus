@@ -1,6 +1,6 @@
 <% provide(:title, "注文履歴ページ") %>
-<% if @orders.present? %>
-  <main>
+<main>
+  <% if @orders.present? %>
     <div class="container my-4 mt-5">
       <a href="#" class="btn btn-secondary py-0">直近3ヶ月の注文を表示</a>
     </div>
@@ -58,12 +58,9 @@
         </ul>
       </nav>
     </div>
-  </main>
-
-<% else %>
-  <main>
+  <% else %>
     <div class="blockquote mt-5 text-center">
       <h1 style="font-weight: bolder">該当の注文は見つかりませんでした...</h1>
     </div>
-  </main>
-<% end %>
+  <% end %>
+</main>
