@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_user.orders.order('id').page(params[:page]).per(10)
+    @orders = current_user.orders.order(id: "DESC").page(params[:page]).per(10)
   end
 
   def correct_user
