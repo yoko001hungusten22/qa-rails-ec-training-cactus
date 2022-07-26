@@ -24,7 +24,7 @@
           </tr>
         </thead>
         <tbody class="h6 font-weight-normal">
-          <% @orders.each.with_index(1) do |order, i| %>
+          <% @orders.each.with_index(@orders.offset_value + 1) do |order, i| %>
             <tr>
               <th class="font-weight-normal" scope="row">
                 <%= i %>
