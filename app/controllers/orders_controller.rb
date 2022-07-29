@@ -9,10 +9,9 @@ class OrdersController < ApplicationController
 
   def destroy
     @order = Order.find_by(id: params[:id]).destroy!
-    #TODO: 注文履歴ページが実装されたら以下の遷移先を変更すること
-    redirect_to order_path
+    redirect_to orders_path
   end
-  
+
   def index
     @orders = current_user.orders.page(params[:page]).per(10)
   end
