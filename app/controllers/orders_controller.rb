@@ -1,10 +1,14 @@
 class OrdersController < ApplicationController
-  before_action :logged_in_user, only: [:show]
+  before_action :logged_in_user, only: [:show, :index]
   before_action :correct_user, only: [:show]
   include SessionsHelper
 
   def show
     @order = current_user.orders.find_by(id: params[:id])
+  end
+
+  def index
+    @orders = current_user.orders.page(params[:page]).per(10)
   end
 
   def correct_user
