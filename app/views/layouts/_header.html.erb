@@ -1,11 +1,11 @@
 <header>
-  <% if logged_in? %>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container-fluid">
-        <div class="navbar-nav mr-auto">
-          <h1><a class="nav-link navbar-brand" href="#">探求学園Rails専攻</a></h1>
-        </div>
-        <div>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <div class="navbar-nav mr-auto">
+        <h1><a class="nav-link navbar-brand" href="#">探求学園Rails専攻</a></h1>
+      </div>
+      <div>
+        <% if logged_in? %>
           <ul>
             <p><%= @current_user.last_name %> <%= @current_user.first_name %>さん</p>
           </ul>
@@ -16,24 +16,15 @@
             <a class="nav-link text-dark" href="#">ユーザ情報</a>
             <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link text-dark" %>
           </ul>
-        </div>
-      </div>
-    </nav>
-  <% else %>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container-fluid">
-        <div class="navbar-nav mr-auto">
-          <h1><a class="nav-link navbar-brand" href="#">探求学園Rails専攻</a></h1>
-        </div>
-        <div>
+        <% else %>
           <ul>
             <li>
               <a class="text-dark" href="#"> ログイン </a>
               <a class="text-dark" href="#"> 新規登録 </a>
             </li>
           </ul>
-        </div>
+        <% end %>
       </div>
-    </nav>
-  <% end %>
+    </div>
+  </nav>
 </header>
