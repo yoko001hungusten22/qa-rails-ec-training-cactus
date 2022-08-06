@@ -8,8 +8,11 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    @order = Order.find_by(id: params[:id]).destroy!
-    redirect_to orders_path
+    @order = current_user.orders.find_by(id: params[:id])
+    if @order.find_preparation_shipment_status
+      @order.destroy!
+      redirect_to orders_path
+    end
   end
 
   def index
