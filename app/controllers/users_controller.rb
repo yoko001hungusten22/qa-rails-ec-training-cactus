@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:show, :edit, :update]
-  before_action :correct_user, only: [:show, :edit, :update]
+  before_action :logged_in_user, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:show, :edit, :update, :destroy]
   include SessionsHelper
   
   def show
@@ -20,6 +20,12 @@ class UsersController < ApplicationController
       flash.now[:danger] = '更新に失敗しました'
       render "edit"
     end
+  end
+
+  def destroy
+    @user = User.find_by(id: params[:id])
+    @user.destroy!
+    redirect_to root_path
   end
 
   def user_params
