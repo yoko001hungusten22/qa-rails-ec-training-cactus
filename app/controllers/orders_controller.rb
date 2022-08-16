@@ -7,6 +7,14 @@ class OrdersController < ApplicationController
     @order = current_user.orders.find_by(id: params[:id])
   end
 
+  def destroy
+    @order = current_user.orders.find_by(id: params[:id])
+    if @order.find_preparation_shipment_status
+      @order.destroy!
+    end
+    redirect_to orders_path
+  end
+
   def index
     @orders = current_user.orders.page(params[:page]).per(10)
   end
