@@ -5,16 +5,26 @@
         <h1><a class="nav-link navbar-brand" href="#">探求学園Rails専攻</a></h1>
       </div>
       <div>
-        <ul>
-          <p>〇〇 ××さん</p>
-        </ul>
-        <ul class="navbar-nav">
-          <a class="nav-link text-dark" href="#">商品検索</a>
-          <a class="nav-link text-dark" href="#">カート</a>
-          <a class="nav-link text-dark" href="#">注文履歴</a>
-          <a class="nav-link text-dark" href="#">ユーザ情報</a>
-          <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link text-dark" %>
-        </ul>
+        <% if logged_in? %>
+          <ul>
+            <p><%= @current_user.last_name %> <%= @current_user.first_name %>さん</p>
+          </ul>
+          <ul class="navbar-nav">
+            <%= link_to '商品検索', products_path, class: "nav-link text-dark" %>
+            <a class="nav-link text-dark" href="#">カート</a>
+            <%= link_to '注文履歴', orders_path, class: "nav-link text-dark" %>
+            <%= link_to 'ユーザ情報', user_path(@current_user), class: "nav-link text-dark" %>
+            <%= link_to "ログアウト", logout_path, method: :delete, class: "nav-link text-dark" %>
+          </ul>
+        <% else %>
+          <ul>
+            <li>
+              <%= link_to 'ログイン', login_path, class: "text-dark" %>
+              <%# TODO: 新規登録画面が実装されたらsignup_pathに遷移させる%>
+              <a class="text-dark" href="#"> 新規登録 </a>
+            </li>
+          </ul>
+        <% end %>
       </div>
     </div>
   </nav>

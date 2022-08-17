@@ -45,8 +45,7 @@ class UsersController < ApplicationController
     user = User.find_by(id: params[:id])
     if current_user != user
       flash[:danger] = '他人の情報にアクセスすることはできません。'
-      #TODO: トップページが実装されたらroot_pathに変更すること
-      redirect_to login_path
+      redirect_to root_path
     end
   end
 
