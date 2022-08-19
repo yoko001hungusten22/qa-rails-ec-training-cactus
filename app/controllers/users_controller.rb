@@ -38,16 +38,17 @@ class UsersController < ApplicationController
     end
   end
 
-  def user_params
-    params.require(:user).permit(:last_name, :first_name, :zipcode, :prefecture, :municipality, :address, :apartments, :email, :phone_number, :company_name, :password, :password_confirmation)
-  end
-
-  def correct_user
-    user = User.find_by(id: params[:id])
-    if current_user != user
-      flash[:danger] = '他人の情報にアクセスすることはできません。'
-      redirect_to root_path
+  private
+  
+    def user_params
+      params.require(:user).permit(:last_name, :first_name, :zipcode, :prefecture, :municipality, :address, :apartments, :email, :phone_number, :company_name, :password, :password_confirmation)
     end
-  end
 
+    def correct_user
+      user = User.find_by(id: params[:id])
+      if current_user != user
+        flash[:danger] = '他人の情報にアクセスすることはできません。'
+        redirect_to root_path
+      end
+    end
 end
