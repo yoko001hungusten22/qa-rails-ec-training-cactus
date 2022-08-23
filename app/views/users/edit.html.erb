@@ -108,7 +108,7 @@
             </div>
         
             <div class="col-5 offset-2">
-              <button class="btn btn-danger" type="submit">退会</button>
+              <%= link_to "退会", @user, method: :delete, data: { confirm: "ユーザーデータが全て削除されます。本当に退会しますか？" }, class: "btn btn-danger" %>
             </div>
           </div>
         <% end %>
