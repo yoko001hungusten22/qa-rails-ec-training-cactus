@@ -4,6 +4,7 @@
       <h2 class="text-center mt-5">ユーザ情報修正</h2>
       <div>
         <%= form_with(model: @user, local: true) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
           <table width="50%" style="margin-left:350px">       
             <tr height="40">
               <td align="center">
