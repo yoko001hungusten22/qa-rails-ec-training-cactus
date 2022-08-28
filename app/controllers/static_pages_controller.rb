@@ -15,8 +15,8 @@ class StaticPagesController < ApplicationController
     user.phone_number = "080123456789"
     user.company_name = "株式会社ゲスト"
     user.user_classification_id = 1
-    log_in(user)
     end
+    log_in(user)
     flash[:success] = 'ゲストユーザーとしてログインしました。'
     redirect_to root_path
   end
