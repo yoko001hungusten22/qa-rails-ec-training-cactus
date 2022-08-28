@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:show, :edit, :update, :destroy]
-  before_action :ensure_normal_user, only: [:edit, :destroy]
+  before_action :ensure_normal_user, only: [:edit, :update, :destroy]
 
   include SessionsHelper
   
