@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :logged_in_user, only: [:show, :index]
+  before_action :logged_in_user, only: [:show, :index, :create]
   include SessionsHelper
 
   def create

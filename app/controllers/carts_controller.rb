@@ -47,18 +47,6 @@ class CartsController < ApplicationController
     end
   end
 
-  def update
-    cart = Cart.find_by(user: current_user)
-    cart_item = cart.cart_items.find_by(product_id: params[:product_id])
-    cart_item.quantity = params[:quantity]
-    if cart_item.save
-      flash[:notice] = 'カート内の商品が更新されました'
-    else
-      flash[:alert] = 'カート内の商品の更新に失敗しました'
-    end
-    redirect_to cart_path
-  end
-
   def delete_item
     @cart = Cart.find_by(user: current_user)
     @cart.cart_items.find_by(params[:id]).destroy!
