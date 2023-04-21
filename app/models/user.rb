@@ -8,6 +8,7 @@ class User < ApplicationRecord
   belongs_to :user_classification
   has_many :orders, dependent: :destroy
   has_many :products, dependent: :destroy
+  has_one :cart, dependent: :destroy
 
   validates :last_name, presence: true, length: { maximum: 10 }
   validates :first_name, presence: true, length: { maximum: 10 }
