@@ -1,7 +1,26 @@
 class OrdersController < ApplicationController
-  before_action :logged_in_user, only: [:show, :index]
-  before_action :correct_user, only: [:show]
+  before_action :logged_in_user, only: [:show, :index, :create]
   include SessionsHelper
+
+  def create
+    order_number = SecureRandom.hex(2)
+    @order = Order.create(user_id: current_user.id, order_number: order_number)
+      current_user.cart.cart_items.each do |cart_item|
+        order_detail = OrderDetail.new(order_id: @order.id)
+        order_detail.order_detail_number = @order.id
+        order_detail.product_id = cart_item.product.id
+        order_detail.order_quantity = cart_item.quantity
+        sub_total_price = cart_item.sum_of_price
+        order_detail.shipment_status_id = 1
+        order_detail.save!
+      end
+    current_user.cart.destroy!
+    redirect_to orders_purchase_completed_path(order_id: @order)
+  end
+
+  def purchase_completed
+    @order = Order.find_by(id: params[:order_id])
+  end
 
   def show
     @order = current_user.orders.find_by(id: params[:id])
